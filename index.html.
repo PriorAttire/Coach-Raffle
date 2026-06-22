@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Bag Raffle</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+    color:#333;
+}
+
+.hero{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:1.2rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.product{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.product img{
+    width:100%;
+    border-radius:15px;
+}
+
+.price-box{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.countdown{
+    display:flex;
+    gap:10px;
+    margin:20px 0;
+    flex-wrap:wrap;
+}
+
+.time{
+    background:#111;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    min-width:80px;
+    text-align:center;
+}
+
+.time span{
+    display:block;
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+.spots{
+    background:#e9ffe9;
+    color:#008000;
+    padding:15px;
+    border-radius:10px;
+    margin:20px 0;
+    font-weight:bold;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:15px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+.info{
+    margin-top:40px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+
+@media(max-width:768px){
+.product{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:2rem;
+}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>Luxury Bag Raffle</h1>
+    <p>Win Authentic Designer Bags for a Fraction of Retail</p>
+</section>
+
+<div class="container">
+
+<div class="product">
+
+<div>
+<img src="YOUR-COACH-BAG-PHOTO.jpg" alt="Coach Bag">
+</div>
+
+<div class="price-box">
+
+<h2>Coach Classic Soho</h2>
+
+<p>
+Excellent pre-owned condition.
+Authentic Coach handbag.
+</p>
+
+<br>
+
+<h3>$5 Per Spot</h3>
+
+<div class="spots">
+Only <span id="spotsLeft">42</span> Spots Remaining
+</div>
+
+<h3>Drawing Ends In:</h3>
+
+<div class="countdown">
+
+<div class="time">
+<span id="days">0</span>
+Days
+</div>
+
+<div class="time">
+<span id="hours">0</span>
+Hours
+</div>
+
+<div class="time">
+<span id="minutes">0</span>
+Minutes
+</div>
+
+<div class="time">
+<span id="seconds">0</span>
+Seconds
+</div>
+
+</div>
+
+<a href="https://cash.app/$YourCashTag" class="btn">
+Enter with Cash App
+</a>
+
+<a href="https://paypal.me/YourPayPal" class="btn">
+Enter with PayPal
+</a>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<h2>How It Works</h2>
+
+<br>
+
+<p>1. Purchase raffle spots.</p>
+<p>2. Send payment and contact info.</p>
+<p>3. Your name is added to the live entrant list.</p>
+<p>4. Winner is selected when countdown ends.</p>
+<p>5. Bag ships free within the U.S.</p>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Luxury Bag Raffles
+</footer>
+
+<script>
+
+// CHANGE THIS DATE
+const raffleDate =
+new Date("July 31, 2026 8:00 PM").getTime();
+
+const countdown = setInterval(() => {
+
+const now = new Date().getTime();
+const distance = raffleDate - now;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance%(1000*60))/1000);
+
+if(distance < 0){
+clearInterval(countdown);
+document.querySelector(".countdown").innerHTML =
+"<h2>🎉 Drawing Closed!</h2>";
+}
+
+},1000);
+
+</script>
+
+</body>
+</html>
