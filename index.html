@@ -224,6 +224,49 @@ Enter with PayPal
 
 </div>
 
+<h3>Choose Your Spot Number</h3>
+
+<input
+type="number"
+id="spotNumber"
+placeholder="Enter Spot Number"
+min="1"
+max="100"
+style="
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #ccc;
+">
+
+<button
+onclick="sendSpot()"
+style="
+width:100%;
+padding:15px;
+margin-top:10px;
+background:#0084FF;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+">
+Send Spot Choice on Messenger
+</button>
+
+<script>
+function sendSpot() {
+  const spot = document.getElementById('spotNumber').value;
+
+  window.open(
+    'https://m.me/YOURFACEBOOKNAME?text=I%20would%20like%20raffle%20spot%20number%20' + spot,
+    '_blank'
+  );
+}
+</script>
+
+
 <footer>
 © 2026 Luxury Bag Raffles
 </footer>
