@@ -41,6 +41,25 @@ body{
     opacity:.9;
 }
 
+/* NEW DEPOP BUTTON */
+.hero a.depop-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:white;
+    color:#111;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    font-size:14px;
+    transition:.3s;
+}
+
+.hero a.depop-btn:hover{
+    background:#d63384;
+    color:white;
+}
+
 /* CONTAINER */
 .container{
     max-width:1200px;
@@ -168,6 +187,11 @@ footer{
 <section class="hero">
     <h1>Coach Bag Raffle</h1>
     <p>Prize pick of 1 Vintage Coach Bag</p>
+
+    <!-- DEPOP LINK ADDED HERE -->
+    <a class="depop-btn" href="https://www.depop.com/prior_attire/" target="_blank">
+        Shop on Depop
+    </a>
 </section>
 
 <div class="container">
@@ -280,7 +304,6 @@ function verifyEntry() {
     const code = document.getElementById('passcode').value;
     const status = document.getElementById('status');
 
-    // 🔐 ACTIVE PASSCODES (YOU CONTROL THESE)
     const VALID_CODES = ["COACH9084"];
 
     if (!spot) {
