@@ -284,26 +284,40 @@ document.querySelector(".countdown").innerHTML =
 
 </script>
 
-</body<div style="position:fixed; bottom:20px; right:20px; z-index:999;">
-    <iframe
-        width="0"
-        height="0"
-        src="https://www.youtube.com/embed/ArmDp-zijuc?autoplay=1&loop=1&playlist=ArmDp-zijuc"
-        title="Super Shy - NewJeans"
-        frameborder="0"
-        allow="autoplay"
-        allowfullscreen>
-    </iframe>
+</body<div id="musicBox" style="
+display:none;
+position:fixed;
+bottom:80px;
+right:20px;
+background:#111;
+padding:10px;
+border-radius:12px;
+">
 
-    <button onclick="document.getElementById('musicBox').style.display='block'" style="
-        padding:12px 16px;
-        border:none;
-        border-radius:50px;
-        background:#111;
-        color:white;
-        cursor:pointer;
-    ">
-        🎵 Music
-    </button>
+<iframe
+width="250"
+height="140"
+src="https://www.youtube.com/embed/ArmDp-zijuc?autoplay=1&loop=1&playlist=ArmDp-zijuc"
+title="Super Shy - NewJeans"
+frameborder="0"
+allow="autoplay"
+allowfullscreen>
+</iframe>
+
 </div>
+
+<button onclick="document.getElementById('musicBox').style.display='block'" style="
+position:fixed;
+bottom:20px;
+right:20px;
+padding:12px 16px;
+border:none;
+border-radius:50px;
+background:#111;
+color:white;
+cursor:pointer;
+z-index:999;
+">
+🎵 Music
+</button>
 </html>
