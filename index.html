@@ -133,7 +133,7 @@ body{
     border-radius:15px;
 }
 
-/* SPOT SECTION */
+/* SPOT BOX */
 .spot-box{
     margin-top:30px;
     background:white;
@@ -212,29 +212,58 @@ footer{
 <div class="info">
     <h2 style="font-family:'Playfair Display', serif;">How It Works</h2>
     <br>
-    <p>1. Purchase raffle spots.</p>
-    <p>2. Send payment and contact info.</p>
-    <p>3. Your name is added to the live entrant list.</p>
-    <p>4. Winner is selected when countdown ends.</p>
-    <p>5. Bag ships free within the U.S.</p>
+    <p>1. Request a spot on Messenger.</p>
+    <p>2. Receive your private passcode.</p>
+    <p>3. Enter spot number + passcode here.</p>
+    <p>4. System verifies your entry.</p>
+    <p>5. Confirmation is sent to Messenger.</p>
 </div>
 
 <div class="spot-box">
-    <h2 style="font-family:'Playfair Display', serif;">Choose Your Spot Number</h2>
 
-    <input
-        type="number"
-        id="spotNumber"
-        placeholder="Enter Spot Number"
-        min="1"
-        max="100"
-        style="width:100%;padding:12px;margin-top:10px;border-radius:8px;border:1px solid #ccc;">
+<h2 style="font-family:'Playfair Display', serif;">
+Spot Verification
+</h2>
 
-    <button
-        onclick="sendSpot()"
-        style="width:100%;padding:15px;margin-top:10px;background:#0084FF;color:white;border:none;border-radius:10px;font-size:16px;">
-        Send Spot Choice on Messenger
-    </button>
+<p style="margin-bottom:10px;">
+Click Messenger to request a spot. You will receive a passcode to complete entry.
+</p>
+
+<a href="https://m.me/61586747224418?text=Hi%20I%20would%20like%20a%20raffle%20spot%20and%20my%20passcode"
+class="btn">
+Request Spot on Messenger
+</a>
+
+<input
+type="number"
+id="spotNumber"
+placeholder="Enter Spot Number"
+min="1"
+max="100"
+style="width:100%;padding:12px;margin-top:15px;border-radius:8px;border:1px solid #ccc;">
+
+<input
+type="text"
+id="passcode"
+placeholder="Enter Passcode from Messenger"
+style="width:100%;padding:12px;margin-top:10px;border-radius:8px;border:1px solid #ccc;">
+
+<button onclick="verifyEntry()" style="
+width:100%;
+padding:15px;
+margin-top:10px;
+background:#111;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+">
+Verify & Submit Entry
+</button>
+
+<p id="status" style="margin-top:10px;font-weight:600;"></p>
+
 </div>
 
 </div>
@@ -245,13 +274,43 @@ footer{
 
 <script>
 
-function sendSpot() {
-  const spot = document.getElementById('spotNumber').value;
+function verifyEntry() {
 
-  window.open(
-    'https://m.me/61586747224418?text=I%20would%20like%20raffle%20spot%20number%20' + spot,
-    '_blank'
-  );
+    const spot = document.getElementById('spotNumber').value;
+    const code = document.getElementById('passcode').value;
+    const status = document.getElementById('status');
+
+    // 🔐 ACTIVE PASSCODES (YOU CONTROL THESE)
+    const VALID_CODES = [
+        "VIP2026",
+        "PRIOR25",
+        "COACHENTRY",
+        "RAFFLE50"
+    ];
+
+    if (!spot) {
+        status.innerHTML = "⚠️ Enter a spot number.";
+        return;
+    }
+
+    if (!code) {
+        status.innerHTML = "⚠️ Enter your passcode from Messenger.";
+        return;
+    }
+
+    if (!VALID_CODES.includes(code)) {
+        status.innerHTML = "❌ Invalid passcode. Contact Messenger.";
+        return;
+    }
+
+    status.innerHTML = "✅ Verified! Sending confirmation...";
+
+    window.open(
+        'https://m.me/61586747224418?text=CONFIRMED%20ENTRY%20-%20Spot:%20'
+        + spot
+        + '%20-%20Passcode%20Verified',
+        '_blank'
+    );
 }
 
 // countdown
