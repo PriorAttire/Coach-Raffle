@@ -3,42 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Coach Bag Raffle</title>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 
 body{
+    margin:0;
+    padding:0;
     background:#dfaad5;
     color:#333;
     font-family: Arial, sans-serif;
 }
 
+/* ================= HERO (FULL BLEED + CENTER FIX) ================= */
+
 .hero{
     background:#111;
     color:white;
-    text-align:center;
-    padding:60px 20px;
     width:100%;
-    margin:0;
 }
 
-/* ✅ CURSIVE HEADER ONLY */
+.hero-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 20px;
+    text-align:center;
+}
+
 .hero h1{
-    font-family: 'Pacifico', cursive !important;
-    font-size:3rem;
+    font-family: 'Dancing Script', cursive;
+    font-size:4rem;
     margin-bottom:10px;
 }
 
 .hero p{
-    font-size:1.2rem;
-    font-family: Arial, sans-serif;
+    font-size:1.1rem;
 }
+
+/* ================= CONTAINER ================= */
 
 .container{
     max-width:1200px;
     margin:auto;
     padding:40px 20px;
 }
+
+/* ================= PRODUCT LAYOUT ================= */
 
 .product {
     display: grid;
@@ -52,12 +65,17 @@ body{
     border-radius:15px;
 }
 
-.price-box{
+/* ================= BOXES ================= */
+
+.price-box,
+.info{
     background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
+
+/* ================= COUNTDOWN ================= */
 
 .countdown{
     display:flex;
@@ -77,9 +95,11 @@ body{
 
 .time span{
     display:block;
-    font-size:1.8rem;
+    font-size:1.6rem;
     font-weight:bold;
 }
+
+/* ================= SPOTS ================= */
 
 .spots{
     background:#e9ffe9;
@@ -90,10 +110,12 @@ body{
     font-weight:bold;
 }
 
+/* ================= BUTTONS ================= */
+
 .btn{
     display:inline-block;
-    width:auto;
-    padding:10px 18px;
+    width:100%;
+    padding:12px;
     text-align:center;
     background:#111;
     color:white;
@@ -102,24 +124,34 @@ body{
     margin-top:10px;
 }
 
-.btn:hover{
-    opacity:.9;
+/* ================= SOCIALS ================= */
+
+.socials{
+    text-align:center;
+    margin-top:60px;
+    padding:30px;
+    background:#111;
+    color:white;
+    border-radius:15px 15px 0 0;
 }
 
-.info{
-    margin-top:40px;
-    background:white;
-    padding:25px;
-    border-radius:15px;
+.socials h3{
+    font-family: 'Dancing Script', cursive;
+    font-size:2rem;
+    margin-bottom:15px;
 }
 
-<div class="socials">
-  <h3>Follow Us</h3>
+.socials a{
+    display:inline-block;
+    margin:5px 10px;
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border:1px solid white;
+    border-radius:8px;
+}
 
-  <a href="https://instagram.com/YOURPAGE" target="_blank">Instagram</a>
-  <a href="https://tiktok.com/@YOURPAGE" target="_blank">TikTok</a>
-  <a href="https://facebook.com/YOURPAGE" target="_blank">Facebook</a>
-</div>
+/* ================= FOOTER ================= */
 
 footer{
     text-align:center;
@@ -127,23 +159,32 @@ footer{
     color:#666;
 }
 
+/* ================= MOBILE ================= */
+
 @media(max-width:768px){
 .product{
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 }
+
 .hero h1{
-font-size:2rem;
+    font-size:2.8rem;
 }
 }
+
 </style>
 </head>
+
 <body>
 
+<!-- HERO -->
 <section class="hero">
+  <div class="hero-inner">
     <h1>Coach Bag Raffle</h1>
-    <p>Prize pick of 1 Vintage Coach Bag </p>
+    <p>Win a vintage Coach handbag 💕</p>
+  </div>
 </section>
 
+<!-- CONTENT -->
 <div class="container">
 
 <div class="product">
@@ -154,132 +195,58 @@ font-size:2rem;
 
 <div class="price-box">
 
-<h2>Preloved Vintage Coach Prizes</h2>
+<h2>Vintage Coach Prizes</h2>
 
-<p>
-    Bags are raffled as is. Inquire with me for any specifics regarding condtion.
-<p>
-    
-    Both Authentic Coach handbags.
-</p>
+<p>Authentic pre-loved Coach handbags.</p>
 
-<br>
-
-<h3>$10 Per 1 Spot or $5 when you purchase 2!</h3>
+<h3>$10 per spot or 2 for $5 each 💕</h3>
 
 <div class="spots">
-Only <span id="spotsLeft">30</span> Spots Remaining
+Only <span id="spotsLeft">30</span> Spots Left
 </div>
 
 <h3>Drawing Ends In:</h3>
 
 <div class="countdown">
-
-<div class="time">
-<span id="days">0</span>
-Days
+<div class="time"><span id="days">0</span>Days</div>
+<div class="time"><span id="hours">0</span>Hours</div>
+<div class="time"><span id="minutes">0</span>Min</div>
+<div class="time"><span id="seconds">0</span>Sec</div>
 </div>
 
-<div class="time">
-<span id="hours">0</span>
-Hours
-</div>
+<a href="https://cash.app/$priorattire" class="btn">Cash App</a>
 
-<div class="time">
-<span id="minutes">0</span>
-Minutes
-</div>
-
-<div class="time">
-<span id="seconds">0</span>
-Seconds
-</div>
-
-</div>
-
-<a href="https://cash.app/$priorattire" class="btn">
-Enter with Cash App
-</a>
-
-<a href="https://paypal.me/YourPayPal" class="btn">
-
-Enter with PayPal
-
-</a>
+<a href="https://paypal.me/YourPayPal" class="btn">PayPal</a>
 
 </div>
 
 </div>
 
 <div class="info">
-
 <h2>How It Works</h2>
+<p>1. Pick your spot</p>
+<p>2. Send payment</p>
+<p>3. Entry confirmed</p>
+<p>4. Winner drawn at countdown end</p>
+</div>
 
-<p>1. Purchase raffle spots.</p>
-
-<p>2. Send payment and contact info.</p>
-
-<p>3. Your name is added to the live entrant list.</p>
-
-<p>4. Winner is selected when countdown ends.</p>
-
-<p>5. Bag ships free within the U.S.</p>
-
+<!-- SOCIALS -->
+<div class="socials">
+  <h3>Follow Us</h3>
+  <a href="#">Instagram</a>
+  <a href="#">TikTok</a>
+  <a href="#">Facebook</a>
 </div>
 
 </div>
-
-<h3>Choose Your Spot Number</h3>
-
-<input
-type="number"
-id="spotNumber"
-placeholder="Enter Spot Number"
-min="1"
-max="100"
-style="
-width:100%;
-padding:12px;
-margin-top:10px;
-border-radius:8px;
-border:1px solid #ccc;
-">
-
-<button
-onclick="sendSpot()"
-style="
-width:100%;
-padding:15px;
-margin-top:10px;
-background:#0084FF;
-color:white;
-border:none;
-border-radius:10px;
-font-size:16px;
-">
-Send Spot Choice on Messenger
-</button>
-
-<script>
-function sendSpot() {
-  const spot = document.getElementById('spotNumber').value;
-
-  window.open(
-    'https://m.me/61586747224418?text=I%20would%20like%20raffle%20spot%20number%20' + spot,
-    '_blank'
-  );
-}
-</script>
 
 <footer>
 © 2026 Luxury Bag Raffles
 </footer>
 
+<!-- TIMER -->
 <script>
-
-// CHANGE THIS DATE
-const raffleDate =
-new Date("July 11, 2026 12:00 PM").getTime();
+const raffleDate = new Date("July 11, 2026 12:00 PM").getTime();
 
 const countdown = setInterval(() => {
 
@@ -301,11 +268,10 @@ Math.floor((distance%(1000*60))/1000);
 if(distance < 0){
 clearInterval(countdown);
 document.querySelector(".countdown").innerHTML =
-"<h2>🎉 Drawing Closed!</h2>";
+"<h2>🎉 Closed!</h2>";
 }
 
 },1000);
-
 </script>
 
 </body>
