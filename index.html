@@ -56,9 +56,19 @@ body{
     align-items:center;
 }
 
-.product img{
+/* ✅ FIXED IMAGE WRAPPER */
+.image-box{
     width:100%;
+    background:#fff;
     border-radius:15px;
+    overflow:hidden;
+}
+
+.image-box img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
 }
 
 /* BOX */
@@ -189,7 +199,7 @@ footer{
 
 <div class="product">
 
-    <div>
+    <div class="image-box">
         <img src="IMG_1776.png" alt="Coach Bag">
     </div>
 
