@@ -6,8 +6,7 @@
 
 <title>Coach Bag Raffle</title>
 
-<!-- DAINTY FONT SYSTEM -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,7 +20,7 @@ body{
     font-family:'Inter', sans-serif;
     background:#dfaad5;
     color:#333;
-    font-weight:300;
+    font-weight:400;
     letter-spacing:.2px;
 }
 
@@ -36,15 +35,15 @@ body{
 .hero h1{
     font-family:'Cormorant Garamond', serif;
     font-size:3.2rem;
-    font-weight:500;
+    font-weight:600;
     letter-spacing:1px;
     margin-bottom:10px;
 }
 
 .hero p{
     font-size:1.1rem;
-    opacity:.85;
-    font-weight:300;
+    opacity:.9;
+    font-weight:400;
 }
 
 /* DEPOP BUTTON */
@@ -56,7 +55,7 @@ body{
     color:#111;
     text-decoration:none;
     border-radius:8px;
-    font-weight:400;
+    font-weight:500;
     transition:.3s;
     font-family:'Inter', sans-serif;
 }
@@ -106,8 +105,8 @@ body{
 
 .price-box h2{
     font-family:'Cormorant Garamond', serif;
-    font-weight:500;
-    font-size:1.8rem;
+    font-weight:600;
+    font-size:1.9rem;
     margin-bottom:10px;
 }
 
@@ -118,7 +117,7 @@ body{
     padding:15px;
     border-radius:10px;
     margin:20px 0;
-    font-weight:400;
+    font-weight:500;
 }
 
 /* COUNTDOWN */
@@ -137,12 +136,13 @@ body{
     min-width:80px;
     text-align:center;
     font-family:'Inter', sans-serif;
+    font-weight:500;
 }
 
 .time span{
     display:block;
     font-size:1.6rem;
-    font-weight:400;
+    font-weight:600;
 }
 
 /* BUTTONS */
@@ -158,7 +158,7 @@ body{
     transition:.3s;
     background:#111;
     font-family:'Inter', sans-serif;
-    font-weight:400;
+    font-weight:500;
 }
 
 .btn:hover{
@@ -185,7 +185,7 @@ body{
     border-radius:10px;
     font-size:16px;
     cursor:pointer;
-    font-weight:400;
+    font-weight:600;
     transition:.3s;
     font-family:'Inter', sans-serif;
 }
@@ -201,12 +201,12 @@ body{
     padding:25px;
     border-radius:15px;
     font-family:'Inter', sans-serif;
-    font-weight:300;
+    font-weight:400;
 }
 
 .info h2{
     font-family:'Cormorant Garamond', serif;
-    font-weight:500;
+    font-weight:600;
 }
 
 /* SPOT BOX */
@@ -217,6 +217,7 @@ body{
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
     font-family:'Inter', sans-serif;
+    font-weight:400;
 }
 
 /* FOOTER */
@@ -225,7 +226,7 @@ footer{
     padding:30px;
     color:#666;
     font-family:'Inter', sans-serif;
-    font-weight:300;
+    font-weight:400;
 }
 
 /* MOBILE */
@@ -258,7 +259,7 @@ footer{
 <div class="product">
 
     <div class="image-box">
-        <img src="IMG_1781.png" alt="Coach Bag">
+        <img src="IMG_1776.png" alt="Coach Bag">
     </div>
 
     <div class="price-box">
@@ -322,13 +323,13 @@ id="spotNumber"
 placeholder="Enter Spot Number"
 min="1"
 max="100"
-style="width:100%;padding:12px;margin-top:15px;border-radius:8px;border:1px solid #ccc;font-family:Inter;">
+style="width:100%;padding:12px;margin-top:15px;border-radius:8px;border:1px solid #ccc;font-family:Inter;font-weight:500;">
 
 <button onclick="confirmSpot()" class="confirm-btn">
 Confirm Spot
 </button>
 
-<p id="status" style="margin-top:10px;font-weight:400;"></p>
+<p id="status" style="margin-top:10px;font-weight:500;"></p>
 
 </div>
 
@@ -340,6 +341,7 @@ Confirm Spot
 
 <script>
 
+// same script unchanged
 let spotsLeft = localStorage.getItem("spotsLeft");
 
 if (spotsLeft === null) {
