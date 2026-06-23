@@ -6,7 +6,8 @@
 
 <title>Coach Bag Raffle</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- DAINTY FONT SYSTEM -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,9 +18,11 @@
 }
 
 body{
-    font-family:'Poppins', sans-serif;
+    font-family:'Inter', sans-serif;
     background:#dfaad5;
     color:#333;
+    font-weight:300;
+    letter-spacing:.2px;
 }
 
 /* HERO */
@@ -31,14 +34,17 @@ body{
 }
 
 .hero h1{
-    font-family:'Playfair Display', serif;
-    font-size:3rem;
+    font-family:'Cormorant Garamond', serif;
+    font-size:3.2rem;
+    font-weight:500;
+    letter-spacing:1px;
     margin-bottom:10px;
 }
 
 .hero p{
-    font-size:1.2rem;
-    opacity:.9;
+    font-size:1.1rem;
+    opacity:.85;
+    font-weight:300;
 }
 
 /* DEPOP BUTTON */
@@ -50,8 +56,9 @@ body{
     color:#111;
     text-decoration:none;
     border-radius:8px;
-    font-weight:600;
+    font-weight:400;
     transition:.3s;
+    font-family:'Inter', sans-serif;
 }
 
 .depop-link:hover{
@@ -98,7 +105,9 @@ body{
 }
 
 .price-box h2{
-    font-family:'Playfair Display', serif;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:1.8rem;
     margin-bottom:10px;
 }
 
@@ -109,7 +118,7 @@ body{
     padding:15px;
     border-radius:10px;
     margin:20px 0;
-    font-weight:600;
+    font-weight:400;
 }
 
 /* COUNTDOWN */
@@ -127,12 +136,13 @@ body{
     border-radius:10px;
     min-width:80px;
     text-align:center;
+    font-family:'Inter', sans-serif;
 }
 
 .time span{
     display:block;
     font-size:1.6rem;
-    font-weight:bold;
+    font-weight:400;
 }
 
 /* BUTTONS */
@@ -147,6 +157,8 @@ body{
     margin-top:10px;
     transition:.3s;
     background:#111;
+    font-family:'Inter', sans-serif;
+    font-weight:400;
 }
 
 .btn:hover{
@@ -168,13 +180,14 @@ body{
     padding:15px;
     margin-top:10px;
     background:#90ee90;
-    color:#006400;
+    color:#0b5d0b;
     border:none;
     border-radius:10px;
     font-size:16px;
     cursor:pointer;
-    font-weight:600;
+    font-weight:400;
     transition:.3s;
+    font-family:'Inter', sans-serif;
 }
 
 .confirm-btn:hover{
@@ -187,6 +200,13 @@ body{
     background:white;
     padding:25px;
     border-radius:15px;
+    font-family:'Inter', sans-serif;
+    font-weight:300;
+}
+
+.info h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
 }
 
 /* SPOT BOX */
@@ -196,6 +216,7 @@ body{
     padding:25px;
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
+    font-family:'Inter', sans-serif;
 }
 
 /* FOOTER */
@@ -203,6 +224,8 @@ footer{
     text-align:center;
     padding:30px;
     color:#666;
+    font-family:'Inter', sans-serif;
+    font-weight:300;
 }
 
 /* MOBILE */
@@ -212,7 +235,7 @@ footer{
     }
 
     .hero h1{
-        font-size:2rem;
+        font-size:2.4rem;
     }
 }
 
@@ -225,7 +248,6 @@ footer{
     <h1>Coach Bag Raffle</h1>
     <p>Prize pick of 1 Vintage Coach Bag</p>
 
-    <!-- DEPOP LINK ADDED -->
     <a class="depop-link" href="https://www.depop.com/prior_attire/" target="_blank">
         Shop My Depop
     </a>
@@ -272,20 +294,18 @@ footer{
 </div>
 
 <div class="info">
-    <h2 style="font-family:'Playfair Display', serif;">How It Works</h2>
+    <h2>How It Works</h2>
     <br>
-    <p>1. Request a spot number on Messenger.</p>
-    <p>2. Send screenshot of payment.</p>
+    <p>1. Request a spot on Messenger.</p>
+    <p>2. Send your spot number.</p>
     <p>3. You receive confirmation.</p>
     <p>4. Your entry is recorded.</p>
-    <p>5. Winner is selected after countdown ends or spots fill.</p>
+    <p>5. Winner is selected after countdown ends.</p>
 </div>
 
 <div class="spot-box">
 
-<h2 style="font-family:'Playfair Display', serif;">
-Spot Reservation
-</h2>
+<h2>Spot Reservation</h2>
 
 <p style="margin-bottom:10px;">
 Click below to request a spot. You will confirm your number through Messenger.
@@ -302,13 +322,13 @@ id="spotNumber"
 placeholder="Enter Spot Number"
 min="1"
 max="100"
-style="width:100%;padding:12px;margin-top:15px;border-radius:8px;border:1px solid #ccc;">
+style="width:100%;padding:12px;margin-top:15px;border-radius:8px;border:1px solid #ccc;font-family:Inter;">
 
 <button onclick="confirmSpot()" class="confirm-btn">
 Confirm Spot
 </button>
 
-<p id="status" style="margin-top:10px;font-weight:600;"></p>
+<p id="status" style="margin-top:10px;font-weight:400;"></p>
 
 </div>
 
